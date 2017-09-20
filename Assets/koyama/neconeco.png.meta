@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 763225e5df20b2c4696c2e2312a75e91
-timeCreated: 1505266823
+timeCreated: 1505872324
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -118,7 +118,7 @@ TextureImporter:
         width: 303.25
         height: 884.9687
       alignment: 9
-      pivot: {x: 0.6849282, y: 0.9472742}
+      pivot: {x: 0.6690842, y: 0.9516031}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -131,12 +131,12 @@ TextureImporter:
         width: 446.6875
         height: 618.8125
       alignment: 9
-      pivot: {x: 0.5137815, y: 0.47780505}
+      pivot: {x: 0.24026144, y: 0.2112618}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 98649065820060
+  userData: 98688841549758
   assetBundleName: 
   assetBundleVariant: 
