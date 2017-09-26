@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 763225e5df20b2c4696c2e2312a75e91
-timeCreated: 1505970514
+guid: 5c7a112b77c6c784da1ec6a5fee3aac9
+timeCreated: 1505972526
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: neconeco_0
-    21300002: neconeco_1
-    21300004: neconeco_2
+    21300000: neconeco-set3_0
+    21300002: neconeco-set3_1
+    21300004: neconeco-set3_2
+    21300006: neconeco-set3_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -30,7 +31,7 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapMode: 1
@@ -69,23 +70,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: Windows Store Apps
     maxTextureSize: 2048
     textureFormat: -1
     textureCompression: 1
@@ -97,46 +82,59 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: neconeco_0
+      name: neconeco-set3_0
       rect:
         serializedVersion: 2
-        x: 971.275
-        y: 1175.4523
-        width: 849.9061
-        height: 1728.0624
-      alignment: 9
-      pivot: {x: 0.45031443, y: 0.53993857}
+        x: 35
+        y: 3
+        width: 862
+        height: 2579
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: neconeco_1
+      name: neconeco-set3_1
       rect:
         serializedVersion: 2
-        x: 1090.7751
-        y: 303.8969
-        width: 303.25
-        height: 884.9687
-      alignment: 9
-      pivot: {x: 0.6849282, y: 0.9472742}
+        x: 926
+        y: 0
+        width: 862
+        height: 2582
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: neconeco_2
+      name: neconeco-set3_2
       rect:
         serializedVersion: 2
-        x: 1367.0004
-        y: 707.82825
-        width: 446.6875
-        height: 618.8125
-      alignment: 9
-      pivot: {x: 0.28179327, y: 0.013588431}
+        x: 1832
+        y: 3
+        width: 852
+        height: 2579
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: neconeco-set3_3
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 235
+        width: 4
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
-  userData: 98689006494571
+  userData: 
   assetBundleName: 
   assetBundleVariant: 
