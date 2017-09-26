@@ -110,7 +110,9 @@
     <Compile Include="Assets\Script\Gateup.cs" />
     <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\koyama\Button.cs" />
     <Compile Include="Assets\koyama\Enemy.cs" />
+    <Compile Include="Assets\koyama\FadeScript.cs" />
     <Compile Include="Assets\koyama\Lift controller.cs" />
     <Compile Include="Assets\koyama\Player.cs" />
     <Compile Include="Assets\koyama\SetTimer.cs" />
