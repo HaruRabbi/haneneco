@@ -1,0 +1,14 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class Button : MonoBehaviour
+{
+    public void ButtonPush()
+    {
+        Debug.Log("Button Push !!");
+        SceneManager.LoadScene("Main1"); // 引数は次に再生したいシーン名
+    }
+}
