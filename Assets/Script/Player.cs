@@ -101,6 +101,6 @@ public class Player : MonoBehaviour
     }
     public void speeddown()
     {
-        jumpPower = 700f;       
+        jumpPower = 400f;       
     }
 }
