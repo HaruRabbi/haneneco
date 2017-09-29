@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
-    public void ButtonPush()
+    // Update is called once per frame
+    void Update()
     {
-        Debug.Log("Button Push !!");
-        SceneManager.LoadScene("Main1"); // 引数は次に再生したいシーン名
+        if (Input.GetKey(KeyCode.Return))
+        {
+            SceneManager.LoadScene("Main1"); // 引数は次に再生したいシーン名
+        }
     }
 }
