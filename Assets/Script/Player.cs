@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Player : MonoBehaviour
 {
@@ -12,11 +13,22 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rigidbody2D;
     private bool isGrounded; //着地判定
+    public GameObject GameOverImage;
+    public GameObject ClearImage;
+
+    private AudioSource audioSource;// AudioSorceコンポーネント格納用
+    public AudioClip sound;// 効果音の格納用。インスペクタで。
+
 
     // Use this for initialization
     void Start ()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
+        GameOverImage.SetActive(false);
+        ClearImage.SetActive(false);
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.loop = false;
     }
 	
 	// Update is called once per frame
@@ -36,8 +48,9 @@ public class Player : MonoBehaviour
                 //着地判定をfalse
                 isGrounded = false;
                 //AddForceにて上方向へ力を加える
-                rigidbody2D.AddForce(Vector2.up * jumpPower);
+                rigidbody2D.AddForce(Vector2.up * jumpPower);                
                 Debug.Log("ぷげー");
+                audioSource.PlayOneShot(sound);
             }
         }
         //上下への移動速度を取得
@@ -96,11 +109,38 @@ public class Player : MonoBehaviour
             jumpPower = 1000f; 
             Invoke("speeddown", 15.0f);   
             // このコンポーネントを持つGameObjectを破棄する
-            Destroy(col.gameObject);
+            Destroy(col.gameObject);                        
+        }
+        // オブジェクトのタグがEnemyなら
+        if (col.gameObject.tag == "Enemy")
+        {
+            // 自オブジェクトを削除する
+            Destroy(this.gameObject);
+            // GameOverImageを表示させる
+            GameOverImage.SetActive(true);
+
+            //AudioManager.Instance.StopBGM();
+        }
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Clear")
+        {
+            // ClearImageを表示させる
+            ClearImage.SetActive(true);
+            Debug.Log("クリア！");
         }
     }
+
     public void speeddown()
     {
         jumpPower = 700f;       
+    }
+
+    public void PlayOneShot()
+    {
+        AudioClip clip = gameObject.GetComponent<AudioSource>().clip;
     }
 }

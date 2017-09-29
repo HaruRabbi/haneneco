@@ -1,17 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Button : MonoBehaviour
+public class SceneSelect : MonoBehaviour
 {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.T))
         {
-            SceneManager.LoadScene("Main1"); // 引数は次に再生したいシーン名
+            SceneManager.LoadScene("Fade-in");
         }
-    }
+    }    
 }
