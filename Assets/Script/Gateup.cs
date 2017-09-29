@@ -20,7 +20,7 @@ public class Gateup : MonoBehaviour {
     /// </summary>
     public void Up()
     {
-        transform.position = startPosition+new Vector2(0,8);
+        transform.position = startPosition+new Vector2(0,12);
     }
 
     public void Down()

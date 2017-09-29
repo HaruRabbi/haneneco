@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
                 isGrounded = false;
                 //AddForceにて上方向へ力を加える
                 rigidbody2D.AddForce(Vector2.up * jumpPower);
+                Debug.Log("ぷげー");
             }
         }
         //上下への移動速度を取得
@@ -100,6 +101,6 @@ public class Player : MonoBehaviour
     }
     public void speeddown()
     {
-        jumpPower = 700f;       
+        jumpPower = 400f;       
     }
 }

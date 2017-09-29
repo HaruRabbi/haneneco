@@ -51,16 +51,22 @@ public class FloorMove : MonoBehaviour
             moved = Vector3.zero;
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        //床の上に乗ったオブジェクトを保存
-        ride.Add(other.gameObject);
-        Debug.LogError ("ride");
+        if(other.gameObject.tag == "Player")
+        {
+            //床の上に乗ったオブジェクトを保存
+            ride.Add(other.gameObject);
+            Debug.LogError("ride");
+        }        
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
-        //床から離れたので削除
-        ride.Remove(other.gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            //床から離れたので削除
+            ride.Remove(other.gameObject);
+        }
     }
 }
