@@ -116,6 +116,8 @@
     <Compile Include="Assets\koyama\FadeScript.cs" />
     <Compile Include="Assets\koyama\Lift controller.cs" />
     <Compile Include="Assets\koyama\Player.cs" />
+    <Compile Include="Assets\koyama\Restart.cs" />
+    <Compile Include="Assets\koyama\SceneSelect.cs" />
     <Compile Include="Assets\koyama\SetTimer.cs" />
   </ItemGroup>
   <ItemGroup>
