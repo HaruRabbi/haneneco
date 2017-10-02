@@ -13,9 +13,9 @@ public class Destroy : MonoBehaviour {
 	void Update () {
 		
 	}
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "teki Destroy")
+        if (other.gameObject.tag == "teki Destroy")
         {
             Destroy(gameObject);
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -58,6 +59,11 @@ public class Player : MonoBehaviour
         bool isJumping = velY > 0.1f ? true : false;
         //移動速度が-0.1より小さければ下降
         bool isFalling = velY < -0.1f ? true : false;
+
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene("Fade-in");
+        }
     }
     void FixedUpdate()
     {
@@ -110,8 +116,8 @@ public class Player : MonoBehaviour
             // このコンポーネントを持つGameObjectを破棄する
             Destroy(col.gameObject);                        
         }
-        // オブジェクトのタグがEnemyなら
-        if (col.gameObject.tag == "Enemy")
+        // オブジェクトのタグがtekiなら
+        if (col.gameObject.tag == "teki")
         {
             // 自オブジェクトを削除する
             Destroy(this.gameObject);
@@ -120,17 +126,20 @@ public class Player : MonoBehaviour
 
             //AudioManager.Instance.StopBGM();
         }
-        
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Clear")
+        if (col.gameObject.tag == "Goal")
         {
+            // このコンポーネントを持つGameObjectを破棄する
+            Destroy(col.gameObject);
             // ClearImageを表示させる
             ClearImage.SetActive(true);
             Debug.Log("クリア！");
         }
+
+    }
+
+    void OnCollisionEnter2D(Collider2D other)
+    {
+        
     }
 
     public void speeddown()
