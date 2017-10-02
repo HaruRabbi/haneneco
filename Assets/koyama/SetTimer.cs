@@ -20,17 +20,17 @@ public class SetTimer : MonoBehaviour
 	void Update ()
     {
         
-        if (Time.timeScale > 0)
-        {
-            second += Time.deltaTime;
+        //if (Time.timeScale > 0)
+        //{
+        //    second += Time.deltaTime;
             
-            if (second > 60.0f)
-            {
-                minite++;
-                second = 0;
-            }
-            //second = Mathf.Floor(0.5f);
-            textField.text = "タイム：" + minite + "分" + second.ToString("f0") + "秒";      
-        }
+        //    if (second > 60.0f)
+        //    {
+        //        minite++;
+        //        second = 0;
+        //    }
+        //    //second = Mathf.Floor(0.5f);
+        //    textField.text = "タイム：" + minite + "分" + second.ToString("f0") + "秒";
+        //}
 	}
 }
