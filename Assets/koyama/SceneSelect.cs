@@ -9,29 +9,16 @@ public class SceneSelect : MonoBehaviour
     private AudioSource audioSource;// AudioSorceコンポーネント格納用
     public AudioClip sound;// 効果音の格納用。インスペクタで。
 
-    public int minite = 0;
-    public float second = 0;
-    public Text textField;
+    //public int minite = 0;
+    //public float second = 0;
+    //public Text textField;
 
     // Use this for initialization
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.loop = false;
-        audioSource.PlayOneShot(sound);
-
-        if (Time.timeScale > 0)
-        {
-            second += Time.deltaTime;
-
-            if (second > 60.0f)
-            {
-                minite++;
-                second = 0;
-            }
-            //second = Mathf.Floor(0.5f);
-            
-        }
+        audioSource.PlayOneShot(sound);        
     }
 
     // Update is called once per frame
@@ -45,7 +32,5 @@ public class SceneSelect : MonoBehaviour
         {
             SceneManager.LoadScene("Main2");
         }
-
-        textField.text = "タイム：" + minite + "分" + second.ToString("f0") + "秒";
     }    
 }

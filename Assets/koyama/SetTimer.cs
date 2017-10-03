@@ -19,18 +19,17 @@ public class SetTimer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        
-        //if (Time.timeScale > 0)
-        //{
-        //    second += Time.deltaTime;
-            
-        //    if (second > 60.0f)
-        //    {
-        //        minite++;
-        //        second = 0;
-        //    }
-        //    //second = Mathf.Floor(0.5f);
-        //    textField.text = "タイム：" + minite + "分" + second.ToString("f0") + "秒";
-        //}
-	}
+
+        if (Time.timeScale > 0)
+        {
+            second += Time.deltaTime;
+
+            if (second > 60.0f)
+            {
+                minite++;
+                second = 0;
+            }
+            textField.text = "タイム：" + minite + "分" + second.ToString("f0") + "秒";
+        }
+    }
 }

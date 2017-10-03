@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -16,6 +17,13 @@ public class Player : MonoBehaviour
     public GameObject GameOverImage;
     public GameObject ClearImage;
 
+    //タイマー関数
+    public Image[] NumberImages;
+    public Sprite[] NumberSprites;
+    public float minite = 0;
+    public float second = 0;
+    public Text textField;
+
     private AudioSource audioSource;// AudioSorceコンポーネント格納用
     public AudioClip sound;// 効果音の格納用。インスペクタで。
 
@@ -26,6 +34,15 @@ public class Player : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         GameOverImage.SetActive(false);
         ClearImage.SetActive(false);
+
+        //1秒
+        NumberImages[0].sprite = NumberSprites[0];
+        //10秒
+        NumberImages[1].sprite = NumberSprites[0];
+        //1分
+        NumberImages[2].sprite = NumberSprites[0];
+        //10分
+        NumberImages[3].sprite = NumberSprites[0];
 
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.loop = false;
@@ -39,6 +56,25 @@ public class Player : MonoBehaviour
         transform.position + transform.up * 1,
         transform.position - transform.up * 0.05f,
         groundLayer);
+
+        //タイマーを更新する
+        second += Time.deltaTime;
+        if (second > 60.0f)
+        {
+            minite++;
+            second = 0;
+        }
+
+        //１秒
+        NumberImages[0].sprite = NumberSprites[Mathf.FloorToInt(second) % 10];
+        //10秒
+        NumberImages[1].sprite = NumberSprites[Mathf.FloorToInt(second) / 10];
+
+        //1分
+        NumberImages[2].sprite = NumberSprites[Mathf.FloorToInt(minite) % 10];
+        //10分
+        NumberImages[3].sprite = NumberSprites[Mathf.FloorToInt(minite) / 10];
+
         //スペースキーを押し、
         if (Input.GetKeyDown("space"))
         {
@@ -130,17 +166,14 @@ public class Player : MonoBehaviour
         {
             // このコンポーネントを持つGameObjectを破棄する
             Destroy(col.gameObject);
+            // 自オブジェクトを削除する
+            Destroy(this.gameObject);
             // ClearImageを表示させる
             ClearImage.SetActive(true);
             Debug.Log("クリア！");
         }
 
-    }
-
-    void OnCollisionEnter2D(Collider2D other)
-    {
-        
-    }
+    }    
 
     public void speeddown()
     {
