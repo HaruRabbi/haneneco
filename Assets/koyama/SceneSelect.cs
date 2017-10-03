@@ -18,20 +18,7 @@ public class SceneSelect : MonoBehaviour
     {
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.loop = false;
-        audioSource.PlayOneShot(sound);
-
-        if (Time.timeScale > 0)
-        {
-            //second += Time.deltaTime;
-
-            //if (second > 60.0f)
-            //{
-            //    minite++;
-            //    second = 0;
-            //}
-            //second = Mathf.Floor(0.5f);
-            
-        }
+        audioSource.PlayOneShot(sound);        
     }
 
     // Update is called once per frame
@@ -45,7 +32,5 @@ public class SceneSelect : MonoBehaviour
         {
             SceneManager.LoadScene("Main2");
         }
-
-        //textField.text = "タイム：" + minite + "分" + second.ToString("f0") + "秒";
     }    
 }

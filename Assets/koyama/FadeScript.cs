@@ -22,11 +22,6 @@ public class FadeScript : MonoBehaviour
     void Update()
     {
         GetComponent<Image>().color = new Color(red, green, blue, alfa);
-        alfa -= speed;
-
-        if (alfa == 0.0f)
-        {
-            //renderer.enabled = false;
-        }
+        alfa -= speed;        
     }
 }

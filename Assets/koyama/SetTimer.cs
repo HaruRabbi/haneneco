@@ -29,7 +29,6 @@ public class SetTimer : MonoBehaviour
                 minite++;
                 second = 0;
             }
-            //second = Mathf.Floor(0.5f);
             textField.text = "タイム：" + minite + "分" + second.ToString("f0") + "秒";
         }
     }
