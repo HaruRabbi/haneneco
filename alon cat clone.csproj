@@ -118,6 +118,7 @@
     <Compile Include="Assets\koyama\Player.cs" />
     <Compile Include="Assets\koyama\Restart.cs" />
     <Compile Include="Assets\koyama\SceneSelect.cs" />
+    <Compile Include="Assets\koyama\SceneSelect2.cs" />
     <Compile Include="Assets\koyama\SetTimer.cs" />
   </ItemGroup>
   <ItemGroup>
